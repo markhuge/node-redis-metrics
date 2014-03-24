@@ -1,0 +1,26 @@
+{
+  "name": "redis-metrics",
+  "description": "Abstraction library for time-series metrics in Node.js JS applications.",
+  "author": "Mark Wilkerson <mark@segfawlt.net>",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/markhuge/node-redis-metrics.git"
+  },
+  "engines": {
+    "node": "~0.10.x"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "dependencies": {
+    "redis": "~0.10.1",
+    "lodash": "~2.4.1"
+  },
+  "devDependencies": {
+    "chai": "~1.9.1",
+    "mocha": "~1.18.2",
+    "blanket": "~1.1.6",
+    "coffee-script": "~1.7.1"
+  }
+}

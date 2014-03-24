@@ -1,0 +1,36 @@
+Metric = require './Metric'
+_      = require 'lodash'
+
+class BitMap extends Metric
+  constructor: (options = {}) ->
+    _.defaults options,
+      type: "BitMap"
+    super options
+
+  _setbit: (offset, value, callback) ->
+    multi = @client.multi()
+    key   = @key()
+
+    multi.setbit "#{key}h:#{@year}:#{@month}:#{@day}:#{@hour}", offset, value
+    multi.setbit "#{key}d:#{@year}:#{@month}:#{@day}", offset, value
+    multi.setbit "#{key}m:#{@year}:#{@month}", offset, value
+    multi.setbit "#{key}y:#{@year}", offset, value
+
+    multi.exec callback
+
+
+  set: (offset, callback) ->
+    @_setbit offset, 1, callback
+
+  unset: (offset, callback) ->
+    @_setbit offset, 0, callback
+
+  count: (namespace...) ->
+    key = namespace.join(":")
+    @client.bitcount key
+
+  size: (namespace...) ->
+    key = namespace.join(":")
+    @client.get key
+
+module.exports = BitMap
