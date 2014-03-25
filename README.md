@@ -1,4 +1,4 @@
-node-redis-metrics [![Build Status](https://secure.travis-ci.org/markhuge/node-redis-metrics.png)](http://travis-ci.org/markhuge/node-redis-metrics)
+node-redis-metrics [![Build Status](https://secure.travis-ci.org/markhuge/node-redis-metrics.png)](http://travis-ci.org/markhuge/node-redis-metrics) [![Coverage Status](https://coveralls.io/repos/markhuge/node-redis-metrics/badge.png)](https://coveralls.io/r/markhuge/node-redis-metrics)
 ==================
 
 > Abstraction library for time-series metrics in Node.js JS applications.

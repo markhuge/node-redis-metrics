@@ -13,6 +13,12 @@
   "scripts": {
     "test": "make test"
   },
+    "config": {
+    "blanket": {
+      "pattern": "build",
+      "data-cover-never": "node_modules"
+    }
+  },
   "dependencies": {
     "redis": "~0.10.1",
     "lodash": "~2.4.1"
@@ -21,6 +27,8 @@
     "chai": "~1.9.1",
     "mocha": "~1.18.2",
     "blanket": "~1.1.6",
-    "coffee-script": "~1.7.1"
+    "coffee-script": "~1.7.1",
+    "coveralls": "~2.10.0",
+    "mocha-lcov-reporter": "0.0.1"
   }
 }

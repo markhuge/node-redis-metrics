@@ -17,3 +17,4 @@ test/*.js
 build
 .vagrant
 Berksfile.lock
+.coveralls.yml
