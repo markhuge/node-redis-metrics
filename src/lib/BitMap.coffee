@@ -8,16 +8,7 @@ class BitMap extends Metric
     super options
 
   _setbit: (offset, value, callback) ->
-    multi = @client.multi()
-    key   = @key()
-
-    multi.setbit "#{key}h:#{@year}:#{@month}:#{@day}:#{@hour}", offset, value
-    multi.setbit "#{key}d:#{@year}:#{@month}:#{@day}", offset, value
-    multi.setbit "#{key}m:#{@year}:#{@month}", offset, value
-    multi.setbit "#{key}y:#{@year}", offset, value
-
-    multi.exec callback
-
+    @exec "setbit", offset, value, callback
 
   set: (offset, callback) ->
     @_setbit offset, 1, callback

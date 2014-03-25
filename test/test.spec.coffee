@@ -6,12 +6,24 @@ client = redis.createClient()
 
 { BitMap
   Counter
+  Metric
   Leaderboard } = require '../build/'
 
 before (done) ->
   client.flushdb (err) ->
     if err then done err
     done()
+
+describe "Metric", ->
+  it "Handles variable arguments in Metric.exec()", (done) ->
+    metric = new Metric
+      client: client
+      name: "test:variable:args"
+    metric.exec "zincrby", 1, "fooo", (err,res)->
+      expect(err).to.equal null
+      expect(res).to.be.an 'array'
+      expect(res).to.have.length 4
+      done()
 
 describe "BitMap", ->
   it "Sets item in bitmap", (done) ->
