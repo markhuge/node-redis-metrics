@@ -16,3 +16,4 @@ node_modules
 test/*.js
 build
 .vagrant
+Berksfile.lock
