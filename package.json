@@ -13,7 +13,7 @@
   "scripts": {
     "test": "make test"
   },
-    "config": {
+  "config": {
     "blanket": {
       "pattern": "build",
       "data-cover-never": "node_modules"
