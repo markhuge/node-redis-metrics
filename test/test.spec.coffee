@@ -17,13 +17,22 @@ before (done) ->
 describe "Metric", ->
   it "Handles variable arguments in Metric.exec()", (done) ->
     metric = new Metric
-      client: client
-      name: "test:variable:args"
-    metric.exec "zincrby", 1, "fooo", (err,res)->
+      client    : client
+      name      : "test:variable:args"
+      intervals : ["day"]
+    metric.exec "zincrby", 1, "foo", (err,res)->
       expect(err).to.equal null
       expect(res).to.be.an 'array'
-      expect(res).to.have.length 4
+      expect(res).to.have.length 1
       done()
+
+  it "Changes namespace with Metric.key()", ->
+    metric = new Metric
+      client : client
+      name   : "basename"
+    key = metric.key "new:name"
+    expect(key).to.equal "basename:new:name"
+    
 
 describe "BitMap", ->
   it "Sets item in bitmap", (done) ->

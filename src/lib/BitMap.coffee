@@ -19,9 +19,9 @@ class BitMap extends Metric
   count: (namespace...) ->
     key = namespace.join(":")
     @client.bitcount key
-
-  size: (namespace...) ->
-    key = namespace.join(":")
-    @client.get key
+  #
+  # size: (namespace...) ->
+  #   key = namespace.join(":")
+  #   @client.get key
 
 module.exports = BitMap
