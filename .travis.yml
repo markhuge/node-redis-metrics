@@ -1,15 +1,16 @@
 cache:
-  directories:
-    -node_modules
-
+  directories: -node_modules
 language: node_js
-
 node_js:
-  - "0.10"
-  - "0.11"
-
+- '0.10'
+- '0.11'
+- '0.8'
 matrix:
   allow_failures:
-    - node_js: "0.11"
-
+  - node_js:
+    - '0.11'
+    - '0.8'
 services: redis
+env:
+  matrix:
+    secure: ZV0UhNCWR/4llYzdWlnbL3vNXtdKYhgrCi/sEuNdUcijduGEKgypl60pkQwIGqwZFHP5k0ZHTDtTnGu3apl5iMKY9cE+N2B7wj0tuhllsD+VjcfhHBzdXQfX8OWW8zcr99WQ61DOD2BAKywmXiVTLcuw+5LLX81xvmGUYX0ioBo=
