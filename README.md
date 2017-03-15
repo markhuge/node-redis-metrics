@@ -145,7 +145,7 @@ Pull requests are checked by TravisCI, with a 100% code coverage requirement.
 
 - Tests are located in the `test/` folder.  
 - All tests should be in coffeescript
-- Tests use [mocha](http://visionmedia.github.io/mocha/) and [chai](http://chaijs.com/)
+- Tests use [mocha](http://mochajs.org/) and [chai](http://chaijs.com/)
 
 #### Running Tests
 
